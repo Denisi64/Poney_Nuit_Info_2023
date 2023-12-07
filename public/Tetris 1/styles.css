@@ -1,0 +1,46 @@
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 320px 200px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-board {
+  position: relative; /* Ajoutez cette ligne pour permettre le positionnement des pièces */
+  border: solid 5px black; /* Ajoutez cette ligne pour la bordure noire */
+}
+
+/* Ajoutez une classe aux pièces du jeu Tetris pour les styles spécifiques */
+.game-piece {
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  border: 1px solid black; /* Bordure intérieure des pièces */
+}
+
+.play-button {
+  background-color: brown;
+  font-size: 16px;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+body {
+ 
+  background-color: rgb(95, 92, 87);
+}
+
+
+.play-button {
+  background-color: brown;
+  font-size: 16px;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
