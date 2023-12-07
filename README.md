@@ -27,7 +27,7 @@
 
 ## DEFI 2 - "EasterEgg" :
 - Link : [site du projet](https://www.nuitdelinfo.com/inscription/defis/328)
-- Membres qui participent : [ Matteo ]
+- Membres qui participent : [ Mateo ]
 
 ## DEFI 3 - "Tetris 404" :
 - Link : [site du projet](https://www.nuitdelinfo.com/inscription/defis/400)
