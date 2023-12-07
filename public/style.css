@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+	width:100%;
+	height:100vh;
+	background-color: black;
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+	color: #fff;
+	font-family: 'Arial';
+	font-weight: 900;
+	font-size: 15vmin;
+	text-align: center;
+	font-size: 15vmin;
+	line-height: 110%;
+}
