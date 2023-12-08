@@ -20,7 +20,8 @@ function getRandomNumb(){
 function homePage() {
   const homePage = `
     <h1>Bienvenue dans : "Où est Charlie ?"</h1>
-    <p>(Papier & crayon conseillé !)
+    <p>(Papier & crayon conseillé ! SON OBLIGATOIRE)</p>
+    
     <div id="boxButtonHome">
         <button id="id-buttonHome" class="class-buttonOrange" type="buttonHome" onclick="page1_step1()">Commencer</button>
     </div>
@@ -130,7 +131,7 @@ function reset() {
 }
 
 let userInput = "";
-const targetMorse = "CAPGEMINI";
+const targetMorse = "CAPGEMINO";
 
 const debug = true;
 let audio = new Audio("./media/morse.unknown.wav");
@@ -144,29 +145,31 @@ function playWav() {
   audio.onended = async () => {
     let letter;
     if (i === 0) {
-      letter = "-.-.\t";
+      letter = "-.-.\t\t";
       ++i;
     } else if (i === 1) {
-      letter = ".-\t";
+      letter = ".-\t\t";
       ++i;
     } else if (i === 2) {
-      letter = ".--.\t";
+      letter = ".--.\t\t";
       ++i;
     } else if (i === 3) {
-      letter = "--.\t";
+      letter = "--.\t\t";
       ++i;
     } else if (i === 4) {
-      letter = ".\t";
+      letter = ".\t\t";
       ++i;
     } else if (i === 5) {
-      letter = "--\t";
+      letter = "--\t\t";
       ++i;
-    } else if (i === 6 || i === 8) {
-      letter = "..\t";
+    } else if (i === 6) {
+      letter = "..\t\t";
       ++i;
     } else if (i === 7) {
-      letter = "-.\t";
+      letter = "-.\t\t";
       ++i;
+    } else if (i === 8) {
+      letter = "---\t\t"
     } else {
       letter = "";
     }
@@ -175,7 +178,6 @@ function playWav() {
     document.getElementById("spoiler").style.textAlign = "center";
     document.getElementById("spoiler").style.fontSize = "x-large";
     if (debug) console.log(letter);
-    await new Promise((r) => setTimeout(r, 3000));
     audio.play();
   };
 }
@@ -206,7 +208,7 @@ window.addEventListener("keydown", (event) => {
 
 function btnMorse() {
   document.getElementById("btn").innerHTML =
-    "La séquence coupe pendant 3s, soyez patient";
+    "La séquence se relancera toute seule";
     document.getElementById("btn").style.backgroundColor = "var(--color-blue-button-home)";
     document.getElementById("btn").style.color = "white";
     playWav();
@@ -214,11 +216,10 @@ function btnMorse() {
 
 const htmlMorse = `
 <H1 align="center" style="margin: 1em 0;">Tapez les lettres que vous entendez</H1>
-<H2 align="center"> (Papier crayon conseillé) </H2>
 <div style="width: 100%; display: flex; justify-content: center;">
     <button id="btn" class="class-buttonBlue" onclick="btnMorse()"> LANCER LA SEQUENCE </button>
 </div>
-<p id="spoiler" style="letter-spacing: 2px;"></p>
+<p id="spoiler" style="letter-spacing: 2px; text-align:center"> Réponse : </p>
 <br/><br/>
 <div id="tableCSS">
 <table align="center">
