@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MOVAI CODE CODDITY</title>
+</head>
+<body>
+<h1>MOVAI CODE CODDITY</h1>
+<p>Pour obtenir rapidement le résultat, entrez 'Paris'. Sinon, patience pour l'attente.</p>
+<input type="text" id="villeInput" placeholder="Entrez le nom de la ville">
+<button onclick="afficherLettres()">Connaitre le taux de CO2 de la ville saisie</button>
+<script src="pireFunction.js"></script>
+<script>
+    function afficherLettres() {
+        const ville = document.getElementById('villeInput').value;
+        afficherLettresAvecChiffrement(ville);
+    }
+</script>
+</body>
+</html>
