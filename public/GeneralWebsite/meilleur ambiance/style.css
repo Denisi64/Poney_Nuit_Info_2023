@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+    font-family: 'Jost', sans-serif;
+    background-color: #c8e3b5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    width: 100%;
+    background-color: #73b146;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 0px 20px;
+}
+.title{
+    background: rgb(152,170,138);
+    width: 100%;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #b5e392 18%, #E5f7d9 100%);
+    padding: 30px;
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 15px 15px 0px 15px;
+
+}
+.title h1{
+    font-size: 100px;
+    margin-left: 50px;
+    color: #73b146;
+}
+.illustration{
+    width: auto;
+    height: 400px;    
+}
+.logo{
+    margin-left: 30px;
+
+    width: 350px;
+    height: 350px;
+}
+nav{
+    padding: 20px 40px;
+    background-color: #73b146;
+    border-radius: 0px 0px 15px 15px;
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    display: inline;
+    margin-right: 10px;
+    float: left;
+    border-radius: 25px;
+
+  }
+  
+  li a {
+    display: block;
+    font-size: 24px;
+    color: rgba(216,222,212,1);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 25px;
+
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+  .first-part{
+    margin-top: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 800px;
+    gap: 30px;
+    padding: 20px;
+  }
+
+.first-part-right{
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+.under-top{
+    color: #708560;
+    display: flex;
+    background-color: #e5f7d9;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    border-radius: 15px;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 17px;
+}
+.under-down{
+    color: #708560;
+    display: flex;
+    background-color: #e5f7d9;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    border-radius: 15px;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 17px;
+}
+.imageillu{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20%;
+        float: left;
+        shape-outside: margin-box;
+        margin: 50px 20px 15px 0;
+}
+.deplace{
+    margin: 0 auto;
+    width: 100%;
+}
+.deplace::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+.accroche{
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.quiz-container {
+    max-width: 95%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result-container {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.quiz-container{
+    width: 95%;
+    background-color: #73b146;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding:  30px 100px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    color: rgba(216,222,212,1);
+}
+#quiz-form{
+    width: 100%;
+    font-size: 25px;
+    color: rgba(216,222,212,1);
+}
+label{
+    margin-left: 20px;
+}
