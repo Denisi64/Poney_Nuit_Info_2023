@@ -1,24 +1,166 @@
-*{
-    margin: 0;
-    padding: 0;
+:root {
+  --color-blue-button-home: #206592;
+  --color-orange-button-home: #ce5c0c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .hero {
-	width:100%;
-	height:100vh;
-	background-color: black;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
 
-	display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero h1 {
-	color: #fff;
-	font-family: 'Arial';
-	font-weight: 900;
-	font-size: 15vmin;
-	text-align: center;
-	font-size: 15vmin;
-	line-height: 110%;
+  color: #fff;
+  font-family: "Arial";
+  font-weight: 900;
+  font-size: 80px;
+  margin-bottom: 3em;
+  text-align: center;
+  line-height: 110%;
+}
+
+.hero h3 {
+  color: #fff;
+  font-family: "Arial";
+  font-weight: 900;
+  font-size: 33px;
+  text-align: center;
+  line-height: 110%;
+}
+
+.hoverzone {
+  position: absolute;
+  padding: 30px;
+}
+
+#boxButtonHome {
+  width: 100%;
+  margin: 0 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.class-button {
+  position: relative;
+  height: 3em;
+  width: 20rem;
+  padding: 0 1em;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #0d0d0d;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.class-button {
+  color: white;
+  border-color: white;
+}
+.class-button:hover {
+  color: black;
+  background-color: white;
+}
+
+.class-buttonOrange, .class-buttonBlue{
+  position: relative;
+  height: 2em;
+  width: 30rem;
+  margin: 0 40px;
+  padding: 0 3em;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #0d0d0d;
+  overflow: hidden;
+  transition: 0.6s;
+}
+
+.class-buttonOrange {
+  color: var(--color-orange-button-home);
+  border-color: var(--color-orange-button-home);
+}
+
+.class-buttonBlue {
+  color: var(--color-blue-button-home);
+  border-color: var(--color-blue-button-home);
+}
+
+.class-buttonOrange:before,
+.class-buttonOrange:after,
+.class-buttonBlue:before,
+.class-buttonBlue:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+
+.class-buttonOrange:before, .class-buttonBlue:before {
+  width: 60px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+
+.class-buttonOrange:after, .class-buttonBlue:after {
+  width: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+
+.class-buttonOrange:hover:before,
+.class-buttonOrange:hover:after,
+.class-buttonBlue:hover:before,
+.class-buttonBlue:hover:after {
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+
+.class-buttonOrange:hover, .class-buttonBlue:hover {
+  color: #f2f2f2;
+  background: var(--color-orange-button-home);
+}
+.class-buttonBlue:hover, .class-buttonBlue:hover {
+  color: #f2f2f2;
+  background: var(--color-blue-button-home);
+}
+
+img{
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+#boxCharlie{
+  display: flex;
+  height: 100%;
+}
+#boxCharlie div{
+  width: 50%;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
