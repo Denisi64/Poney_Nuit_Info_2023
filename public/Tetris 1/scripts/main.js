@@ -4,15 +4,73 @@ const canvasNext = document.getElementById('next');
 const ctxNext = canvasNext.getContext('2d');
 
 let accountValues = {
-  score: 0,
+  score: 1,
   level: 0,
   lines: 0
-}
+};
+let goalreached=false;
+let completedLines = 0;
+const goalScore = 404;
+
 
 function updateAccount(key, value) {
   let element = document.getElementById(key);
   if (element) {
     element.textContent = value;
+  }
+}
+
+function clearLines() {
+  completedLines++;
+  console.log('Clearing lines. Completed lines:', completedLines);
+  updateScore();
+}
+
+// Modifiez la fonction updateScore pour appeler showRealTimeScore.
+function updateScore() {
+  
+  updateAccount('lines', accountValues.lines);
+  updateAccount('score', accountValues.score);
+  // Vous pouvez ajouter d'autres logiques de calcul de score ici si nécessaire
+  if (accountValues.score >= goalScore && goalreached==false) {
+    goalreached=true;
+    const goalReachedMessage = document.getElementById('PerdreTemps');
+    goalReachedMessage.textContent = "Félicitations ! Vous avez Perdus votre temps!";
+    goalReachedMessage.style.display = 'block';
+  }
+  
+}
+
+// Ajoutez cette fonction à votre code JavaScript
+function stopGame() {
+  cancelAnimationFrame(requestId);
+  showGameOver();
+}
+
+function hideRealTimeScore() {
+  const realTimeScoreMessage = document.querySelector('.real-time-score-message');
+  if (realTimeScoreMessage) {
+    realTimeScoreMessage.remove();
+  }
+}
+
+// Modifiez la fonction showGameOver pour cacher le score en temps réel.
+function showGameOver() {
+  const gameOverMessage = document.createElement('div');
+  gameOverMessage.textContent = `Partie terminée ! Votre score final est ${accountValues.score}.`;
+  gameOverMessage.classList.add('game-over-message'); // Ajoutez une classe CSS pour le style si nécessaire.
+  document.body.appendChild(gameOverMessage);
+
+  // Ajoutez ici d'autres éléments ou actions à effectuer à la fin du jeu.
+  hideRealTimeScore();  // Cacher le score en temps réel.
+}
+
+
+// Ajoutez cette fonction pour supprimer le message de jeu terminé lorsque vous recommencez le jeu.
+function hideGameOver() {
+  const gameOverMessage = document.querySelector('.game-over-message');
+  if (gameOverMessage) {
+    gameOverMessage.remove();
   }
 }
 
@@ -66,20 +124,31 @@ function addEventListener() {
       } else if (board.valid(p)) {
         board.piece.move(p);
         if (event.keyCode === KEY.DOWN) {
-          account.score += POINTS.SOFT_DROP;         
+          event.preventDefault();
+          let p = moves[event.keyCode](board.piece);
+          if (board.valid(p)) {
+            board.piece.move(p);
+            accountValues.score += POINTS.SOFT_DROP;
+            updateScore();
+            
+          }
         }
-      }
+      } // Ajoutez cette parenthèse pour fermer le bloc else if
     }
   });
 }
 
+
 function resetGame() {
+  hideGameOver();
+  
   account.score = 0;
   account.lines = 0;
   account.level = 0;
   board.reset();
   time = { start: 0, elapsed: 0, level: LEVEL[account.level] };
 }
+
 
 function play() {
   resetGame();

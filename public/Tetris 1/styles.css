@@ -1,46 +1,135 @@
 * {
-  font-family: 'Press Start 2P', cursive;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 320px 200px;
+  margin: 0 30% 0 20%; /* Ajustez ces valeurs pour décaler la grille vers la gauche */
+  grid-column: 1;
+  grid-row: 1;
+}
+.right-column {
+  display: grid;
+  grid-column: 3;
+  grid-row: 1;
+  text-align: center; /* Pour centrer le texte sous l'image */
 }
 
-.right-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.img404 {
+  width: 100%;
+  height: auto;
 }
+
+.right-column p {
+  font-family: Arial, sans-serif; /* Changer la police en Arial */
+  font-size: 36px; /* Ajuster la taille du texte selon vos préférences */
+  margin-top: 10px;
+  margin-bottom: 55px; /* Ajuster l'espace en bas */
+  color: rgb(49, 83, 15);
+  position: relative;
+  animation: smoke 3s ease-in-out infinite; /* Ajouter une animation de fumée */
+}
+
+@keyframes smoke {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(168, 7, 7, 0.884);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(25, 41, 187, 0.863);
+  }
+}
+
 
 .game-board {
-  position: relative; /* Ajoutez cette ligne pour permettre le positionnement des pièces */
-  border: solid 5px black; /* Ajoutez cette ligne pour la bordure noire */
+  position: relative;
+  border: solid 5px black;
+  margin-right: 20px;
 }
 
-/* Ajoutez une classe aux pièces du jeu Tetris pour les styles spécifiques */
 .game-piece {
-  position: absolute; /* Position absolue par rapport au conteneur parent */
-  border: 1px solid black; /* Bordure intérieure des pièces */
+  position: absolute;
+  border: 1px solid black;
 }
 
 .play-button {
-  background-color: brown;
+  background-color:#82867e;
   font-size: 16px;
   padding: 15px 30px;
   cursor: pointer;
 }
 
+#board{
+  background-color: #98AA8A;
+  grid-column: 1;
+}
 body {
- 
-  background-color: rgb(95, 92, 87);
+  background-color: #708560;
+  display:grid ;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 30px;
+  
 }
 
-
-.play-button {
-  background-color: brown;
+.stop-button {
+  background-color: #82867e;
+  color: black;
   font-size: 16px;
-  padding: 15px 30px;
+  padding: 15px 30px; /* Ajustez la valeur pour correspondre à la classe .play-button */
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
+.game-over-message {
+  display: grid;
+  font-size: 20px;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 80%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  grid-column: 3;
+  grid-row: 2;
+
+}
+
+.congratulations-message {
+  display: grid;
+  font-size: 24px;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 80%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère pour démarquer du fond */
+  grid-column: 3;
+  grid-row: 2;
+}
+
+
+#PerdreTemps{
+
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 80%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère pour démarquer du fond */
+  grid-column: 2;
+  grid-row: 4;
+
+}
+
+.pagefound{
+  display: grid;
+  grid-column: 3;
+  grid-row: 2;
+}

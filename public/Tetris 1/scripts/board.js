@@ -54,8 +54,10 @@ class Board {
         this.clearLines();
         if (this.piece.y === 0) {
           // Game over
+          showGameOver();
           return false;
         }
+        
         this.piece = this.next;
         this.piece.ctx = this.ctx;
         this.piece.setStartingPosition();
