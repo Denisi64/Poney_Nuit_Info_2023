@@ -76,7 +76,7 @@ function move() {
 }
 
 function changeButton() {
-  console.log("timer 1 done");
+  if(debug) console.log("timer 1 done");
 
   let button = document.getElementById("hoverzone2");
   let buttonText = document.getElementById("button2");
@@ -87,7 +87,7 @@ function changeButton() {
 }
 
 function freezeButtons() {
-  console.log("timer 2 done");
+  if(debug) console.log("timer 2 done");
 
   let button = document.getElementById("hoverzone2");
   let buttonText = document.getElementById("button2");
@@ -105,7 +105,7 @@ function caught() {
 }
 
 function timer1() {
-  console.log("timer 1 lauch");
+  if(debug) console.log("timer 1 lauch");
   // Timer pour geler les boutons après 5 secondes
   setTimeout(() => {
     changeButton();
@@ -113,7 +113,7 @@ function timer1() {
 }
 
 function timer2() {
-  console.log("timer 2 lauch");
+  if(debug) console.log("timer 2 lauch");
   // Timer pour geler les boutons après 10 secondes
   setTimeout(() => {
     freezeButtons();
@@ -133,7 +133,7 @@ function reset() {
 let userInput = "";
 const targetMorse = "CAPGEMINO";
 
-const debug = true;
+const debug = false;
 let audio = new Audio("./media/morse.unknown.wav");
 
 // Code Morse
@@ -146,7 +146,7 @@ function playWav() {
     let letter;
     if (i === 0) {
       letter = "-.-.\t\t";
-      ++i;
+      i++;
     } else if (i === 1) {
       letter = ".-\t\t";
       ++i;
@@ -170,8 +170,11 @@ function playWav() {
       ++i;
     } else if (i === 8) {
       letter = "---\t\t"
+      ++i;
     } else {
       letter = "";
+      audio.pause();
+      audio.volume = 0;
     }
     if (debug) console.log(i);
     document.getElementById("spoiler").textContent += letter;
@@ -195,7 +198,7 @@ window.addEventListener("keydown", (event) => {
     userInput = morseChar;
   }
 
-  console.log(userInput);
+  if(debug) console.log(userInput);
 
   // Check if the user input matches the morse code for "targetmorse"
   if (userInput === targetMorse) {
