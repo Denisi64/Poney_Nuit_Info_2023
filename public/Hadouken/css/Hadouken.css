@@ -1,0 +1,93 @@
+#containers {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Affiche les carrés et le bouton en colonne */
+  justify-content: center;
+  align-items: center;
+  z-index: -1; /* Essayez d'ajuster le z-index pour mettre cette section en arrière-plan */
+
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  color: white;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  line-height: 50px;
+  padding-right: 200px;
+}
+
+#containers::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.blurred-text {
+  filter: blur(5px);
+}
+
+#containers {
+  display: flex;
+  flex-direction: column;
+}
+.imgRebus {
+  display: flex;
+  flex-direction: row; /* Affiche les images des carrés en ligne */
+}
+
+.butt {
+  margin-top: 200px;
+  padding: 1.1em 2em;
+  background: none;
+  border: 2px solid #fff;
+  font-size: 15px;
+  color: #131313;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-radius: 12px;
+  background-color: green;
+  font-weight: bolder;
+  box-shadow: 0 2px 0 2px #000;
+ }
+ 
+ .butt:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 120%;
+  background-color: #7bff00;
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+ }
+ 
+ .butt:hover {
+  background-color: greenyellow;
+  color: #fff;
+  box-shadow: 0 2px 0 2px #0d3b66;
+ }
+ 
+ .butt:hover::before {
+  transform: skewX(30deg) translate(300%, -50%);
+  transition-delay: 0.1s;
+ }
+ 
+ .butt:active {
+  transform: scale(0.9);
+ }
