@@ -8,17 +8,24 @@
   padding: 0;
 }
 
+body{
+    height: 100vh;
+}
+
+p{
+    color: white;
+}
+
 .hero {
   width: 100%;
-  height: 100vh;
   background-color: black;
-
+    min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero h1 {
+h1 {
   color: #fff;
   font-family: "Arial";
   font-weight: 900;
@@ -28,7 +35,7 @@
   line-height: 110%;
 }
 
-.hero h3 {
+h2,h3 {
   color: #fff;
   font-family: "Arial";
   font-weight: 900;
@@ -66,6 +73,7 @@
   overflow: hidden;
   transition: 0.6s;
 }
+
 .class-button {
   color: white;
   border-color: white;
@@ -75,7 +83,8 @@
   background-color: white;
 }
 
-.class-buttonOrange, .class-buttonBlue{
+.class-buttonOrange,
+.class-buttonBlue {
   position: relative;
   height: 2em;
   width: 30rem;
@@ -118,13 +127,15 @@
   transition: 0.6s;
 }
 
-.class-buttonOrange:before, .class-buttonBlue:before {
+.class-buttonOrange:before,
+.class-buttonBlue:before {
   width: 60px;
   background: rgba(255, 255, 255, 0.6);
   transform: translateX(-130px) skewX(-45deg);
 }
 
-.class-buttonOrange:after, .class-buttonBlue:after {
+.class-buttonOrange:after,
+.class-buttonBlue:after {
   width: 30px;
   background: rgba(255, 255, 255, 0.6);
   transform: translateX(-130px) skewX(-45deg);
@@ -138,29 +149,63 @@
   transform: translateX(320px) skewX(-45deg);
 }
 
-.class-buttonOrange:hover, .class-buttonBlue:hover {
+.class-buttonOrange:hover,
+.class-buttonBlue:hover {
   color: #f2f2f2;
   background: var(--color-orange-button-home);
 }
-.class-buttonBlue:hover, .class-buttonBlue:hover {
+.class-buttonBlue:hover,
+.class-buttonBlue:hover {
   color: #f2f2f2;
   background: var(--color-blue-button-home);
 }
 
-img{
-  height: 100%;
-  width: 100%;
-  aspect-ratio: 1;
+#btn {
+    width: 60rem;
+    font-size: 22px;
+    padding: 0 2em;
+    margin: 1em 0;
 }
 
-#boxCharlie{
+img {
+  height: 100%;
+  width: 100%;
+}
+
+#boxCharlie {
   display: flex;
   height: 100%;
 }
-#boxCharlie div{
+#boxCharlie div {
   width: 50%;
   margin: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#tableCSS{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  height: 40%;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 40px;
+  background-color: gainsboro;
+}
+
+th {
+  background-color: #f2f2f2;
 }
