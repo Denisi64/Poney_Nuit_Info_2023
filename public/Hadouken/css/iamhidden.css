@@ -1,0 +1,193 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 250vh; 
+  width: 100vw;
+  
+}
+
+#container{
+  height: 250vh; 
+  width: 100vw;
+
+  background-image: url(../img/img_glacier.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+  
+
+section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; 
+}
+
+#section1 {
+  height: 300px; 
+  opacity: 1; 
+}
+
+#section2 {
+  height: 400px; 
+  width:  100vw ;
+  opacity: 0; 
+  position: fixed;
+  bottom: 0;
+
+  flex-direction: column;
+
+}
+
+
+h2 {
+  font-size: 60px;
+}
+
+#section2 h2{
+  color: white;
+
+}
+
+
+
+.rotate-bg {
+    transform: rotate(360deg);
+}
+
+
+
+
+/* ============== Fée clochette ============== */
+.wrap {
+  margin: 100px;
+}
+
+.route {
+  height: 200px;
+  width: 400px;
+  position: relative;
+}
+
+.plane {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  transform: translate(50%, 50%);
+  animation: travelRandomlyInSection 10s linear infinite;
+  height: 100px;
+  width: 100px;
+}
+
+
+
+
+
+
+/* Define the animation */
+@keyframes travelRandomlyInSection {
+  0% {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%) rotate(0deg);
+  }
+  25% {
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%) rotate(90deg);
+  }
+  50% {
+    right: 20%;
+    bottom: 70%;
+    transform: translate(50%, 50%) rotate(180deg);
+  }
+  75% {
+    right: 80%;
+    bottom: 20%;
+    transform: translate(50%, 50%) rotate(270deg);
+  }
+  100% {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%) rotate(360deg);
+  }
+}
+
+/* Apply the animation to an image within section2 */
+#section2 img {
+  position: absolute;
+  animation: travelRandomlyInSection 10s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+@keyframes travelRoundTheBorder {
+  30% {
+    bottom: 0;
+    right: 100%;
+    transform: translate(50%, 50%);
+  }
+  
+  32.5% {
+    bottom: 0;
+    right: 100%;
+    transform: translate(50%, 50%) rotate(90deg);
+  }
+  
+  47.5% {
+    right: 100%;
+    bottom: 100%;
+    transform: translate(50%, 50%) rotate(90deg);
+  }
+  
+  50% {
+    right: 100%;
+    bottom: 100%;
+    transform: translate(50%, 50%) rotate(180deg);
+  }
+  
+  80% {
+    right: 0;
+    bottom: 100%;
+    transform: translate(50%, 50%) rotate(180deg);
+  }
+  
+  82.5% {
+    right: 0;
+    bottom: 100%;
+    transform: translate(50%, 50%) rotate(270deg);
+  }
+  
+  97.5% {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%) rotate(270deg);
+  }
+  
+  100% {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%) rotate(360deg);
+  }
+}
+
+
+ */
